@@ -21,7 +21,7 @@ node {
    
    stage('Package & Deploy') {
    bat("mvn package")
-	 bat 'curl --upload-file target/calcwebapp.war "http://deployer:deployer@6243cfba.ngrok.io/manager/text/deploy?path=/Animesh&upodate=true"'
+	 bat 'curl --upload-file target/calcwebapp.war "http://deployer:deployer@6243cfba.ngrok.io/manager/text/deploy?path=/AnimeshCalc"'
    }
    
 
