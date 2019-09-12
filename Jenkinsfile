@@ -4,7 +4,7 @@ node {
   
   stage('Code Checkout') { 
       // Get some code from a GitHub repository
-      git 'https://github.com/rchidana/calcwebapp.git'
+      git 'https://github.com/AniACN/calcwebapp.git'
 
    }
    
@@ -21,7 +21,7 @@ node {
    
    stage('Package & Deploy') {
    bat("mvn package")
-	 bat 'curl --upload-file target/calcwebapp.war "http://deployer:deployer@localhost:8081/manager/text/deploy?path=/webcalcdemo&update=true"'
+	 bat 'curl --upload-file target/calcwebapp.war "http://deployer:deployer@6243cfba.ngrok.io/manager/text/deploy?path=/Animesh=true"'
    }
    
 
@@ -31,14 +31,14 @@ node {
     mail bcc: '', body: '''Jenkins build Failure!!!
 	
     Better get it fixed!
-    Anand''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'anandr72@gmail.com' 
+    Anand''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'animesh.mittal91@gmail.com' 
 }  finally {
 	echo "Finally Block"
 	
 	mail bcc: '', body: '''Jenkins build Success!!
 	
     Build executed!
-    Anand''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'anandr72@gmail.com' 
+    Anand''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'animesh.mittal91@gmail.com' 
 
 }
     
