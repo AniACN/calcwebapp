@@ -21,24 +21,24 @@ node {
    
    stage('Package & Deploy') {
    bat("mvn package")
-	 bat 'curl --upload-file target/calcwebapp.war "http://deployer:deployer@6243cfba.ngrok.io/manager/text/deploy?path=/Animesh=true"'
+	 bat 'curl --upload-file target/calcwebapp.war "http://deployer:deployer@6243cfba.ngrok.io/manager/text/deploy?path=/Animesh&upodate=true"'
    }
    
 
 } catch(e) {
 	echo "Caught some exception"
 	
-    mail bcc: '', body: '''Jenkins build Failure!!!
+    //mail bcc: '', body: '''Jenkins build Failure!!!
 	
-    Better get it fixed!
-    Anand''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'animesh.mittal91@gmail.com' 
+    //Better get it fixed!
+    //Anand''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'animesh.mittal91@gmail.com' 
 }  finally {
 	echo "Finally Block"
 	
-	mail bcc: '', body: '''Jenkins build Success!!
+	//mail bcc: '', body: '''Jenkins build Success!!
 	
-    Build executed!
-    Anand''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'animesh.mittal91@gmail.com' 
+    //Build executed!
+    //Anand''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'animesh.mittal91@gmail.com' 
 
 }
     
